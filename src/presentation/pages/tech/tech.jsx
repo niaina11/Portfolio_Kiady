@@ -1,96 +1,65 @@
 import { motion } from "framer-motion";
-import { SiCodeigniter, SiDjango, SiLaravel, SiReact, SiSpringboot, SiMysql, SiPostgresql, SiSqlite } from "react-icons/si";
+import { FaDatabase, FaPaintBrush, FaCode, FaLaptopCode } from "react-icons/fa";
+
+const skillsData = [
+  {
+    icon: <FaPaintBrush className="text-3xl text-blue-600" />,
+    title: "Design",
+    subtitle: "Des interfaces modernes et intuitives.",
+    tools: "Figma, Adobe XD, Photoshop, Canvas",
+  },
+  {
+    icon: <FaLaptopCode className="text-3xl text-blue-600" />,
+    title: "Frontend",
+    subtitle: "Expériences utilisateur dynamiques.",
+    tools: "React.js, Angular, Tailwind, Bootstrap",
+  },
+  {
+    icon: <FaCode className="text-3xl text-blue-600" />,
+    title: "Backend",
+    subtitle: "Systèmes robustes et performants.",
+    tools: "Laravel, Django, Express.js, CodeIgniter",
+  },
+  {
+    icon: <FaDatabase className="text-3xl text-blue-600" />,
+    title: "Base de données",
+    subtitle: "Données gérées avec précision.",
+    tools: "MySQL, PostgreSQL, SQLite, MongoDB",
+  },
+];
 
 export default function Skills() {
-  const technologies = [
-    { name: "Django", level: 90, icon: <SiDjango size={30} className="text-green-600" /> },
-    { name: "Laravel", level: 85, icon: <SiLaravel size={30} className="text-red-500" /> },
-    { name: "CodeIgniter", level: 80, icon: <SiCodeigniter size={30} className="text-orange-500" /> },
-    { name: "React Js", level: 90, icon: <SiReact size={30} className="text-blue-500" /> },
-  ];
-
-  const databases = [
-    { name: "MySQL", level: 90, icon: <SiMysql size={30} className="text-blue-700" /> },
-    { name: "PostgreSQL", level: 85, icon: <SiPostgresql size={30} className="text-blue-500" /> },
-    { name: "SQLite", level: 80, icon: <SiSqlite size={30} className="text-gray-600" /> },
-  ];
-
   return (
-    <section id="skills" className="min-h-screen flex flex-col items-center px-6 py-10 bg-white">
-      <motion.h2 
-        className="text-4xl font-bold text-blue-900 mb-8"
-        initial={{ opacity: 0, y: -30 }}
+    <section id="skills" className="py-16 px-6 bg-gradient-to-b from-white to-blue-50">
+      <motion.h2
+        className="text-4xl font-bold text-center text-blue-900 mb-12"
+        initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         viewport={{ once: false }}
-        transition={{ duration: 0.5 }}
       >
         Compétences
       </motion.h2>
 
-      {/* Conteneur en flex-row sur grand écran et flex-col sur mobile */}
-      <div className="flex flex-col lg:flex-row gap-10 w-full max-w-5xl">
-        
-        {/* Section Technologies */}
-        <motion.div 
-          className="flex-1 bg-blue-50 p-6 rounded-lg shadow-md"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4 text-center">Technologies</h3>
-          <div className="space-y-6">
-            {technologies.map((skill, index) => (
-              <SkillBar key={index} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Section Bases de données */}
-        <motion.div 
-          className="flex-1 bg-blue-50 p-6 rounded-lg shadow-md"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-semibold text-blue-800 mb-4 text-center">Bases de données</h3>
-          <div className="space-y-6">
-            {databases.map((skill, index) => (
-              <SkillBar key={index} skill={skill} />
-            ))}
-          </div>
-        </motion.div>
-
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {skillsData.map((skill, index) => (
+          <motion.div
+            key={index}
+            className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            viewport={{ once: false }}
+          >
+            <div className="flex-shrink-0">{skill.icon}</div>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-800">{skill.title}</h3>
+              <p className="text-sm text-gray-500 mb-2">{skill.subtitle}</p>
+              <p className="text-sm text-gray-800">{skill.tools}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
-  );
-}
-
-// Composant réutilisable pour la barre de progression
-function SkillBar({ skill }) {
-  return (
-    <motion.div
-      className="bg-white p-4 rounded-lg shadow-sm"
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: false }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="flex items-center space-x-4">
-        {skill.icon}
-        <h3 className="text-lg font-semibold text-blue-700">{skill.name}</h3>
-      </div>
-      <div className="w-full bg-gray-200 h-2 rounded-full mt-2">
-        <motion.div
-          className="h-2 bg-blue-500 rounded-full"
-          initial={{ width: "0%" }}
-          whileInView={{ width: `${skill.level}%` }}
-          viewport={{ once: false }}
-          transition={{ duration: 1.2 }}
-          style={{ width: `${skill.level}%` }}
-        />
-      </div>
-    </motion.div>
   );
 }

@@ -5,6 +5,7 @@ import laravel from "../../../assets/laravel.png";
 import django from "../../../assets/django.png";
 import { motion } from "framer-motion";
 import { SiCodeigniter, SiDjango, SiLaravel } from "react-icons/si";
+import { Eye } from "lucide-react";
 
 export default function Portfolio() {
   return (
@@ -47,9 +48,12 @@ export default function Portfolio() {
 
             <a
               href="https://drive.google.com/file/d/1-PUAffOU1g7bh_d7ojb0iAgGEDD92QZX/view?usp=sharing"
-              className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg hover:bg-blue-700 transition inline-flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Télécharger mon CV
+              <Eye className="w-5 h-5" />
+              Voir mon CV
             </a>
           </motion.div>
         </div>

@@ -15,7 +15,7 @@ function About() {
         <div className="md:w-1/2 text-left">
           <h2 className="text-4xl font-bold text-blue-900 mb-4">À propos de moi</h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            Je suis <span className="font-semibold text-blue-700">SYLLA Guerra</span>, un développeur backend passionné.
+            Je suis <span className="font-semibold text-blue-700">SYLLA Guerra</span>, un développeur Full-stack passionné.
             J'aime créer des applications performantes et sécurisées avec <span className="font-semibold">Django, Laravel et CodeIgniter</span>.
             Mon objectif est de toujours optimiser le code et d'améliorer l'expérience utilisateur.
           </p>

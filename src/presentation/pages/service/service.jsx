@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaLaravel, FaPython, FaJava, FaPhp } from "react-icons/fa";
+import { FaCode, FaServer, FaLaptopCode } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 export default function Services() {
@@ -27,39 +27,40 @@ export default function Services() {
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5 , ease: "easeInOut" }}
         >
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-3xl text-blue-900 font-bold mb-6">Mes Services</h2>
-                <p className="text-gray-600 mb-12">Je développe des applications backend performantes et sécurisées.</p>
+                <p className="text-gray-600 mb-12">Je conçois et développe des solutions web modernes, performantes et sur mesure.</p>
 
                 <motion.div
-                    className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                        } transition-all duration-1000 ease-in-out`}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
+                    className={`grid grid-cols-1 md:grid-cols-3 gap-8 ${
+                        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    } transition-all duration-1000 ease-in-out`}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                 >
-                    {/* Django */}
+                    {/* Développeur Backend */}
                     <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
-                        <FaPython className="text-blue-500 text-5xl mb-4" />
-                        <h3 className="text-xl font-semibold">Développement Django</h3>
-                        <p className="text-gray-600 mt-2">Création d'API performantes et sécurisées avec Django et DRF.</p>
+                        <FaServer className="text-blue-600 text-5xl mb-4" />
+                        <h3 className="text-xl font-semibold">Développeur Backend</h3>
+                        <p className="text-gray-600 mt-2">API sécurisées, gestion de bases de données et logique métier robuste.</p>
                     </div>
 
-                    {/* Laravel */}
+                    {/* Développeur Full-stack */}
                     <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
-                        <FaLaravel className="text-red-500 text-5xl mb-4" />
-                        <h3 className="text-xl font-semibold">Développement Laravel</h3>
-                        <p className="text-gray-600 mt-2">Conception d'applications robustes avec Laravel et MySQL.</p>
+                        <FaCode className="text-green-600 text-5xl mb-4" />
+                        <h3 className="text-xl font-semibold">Développeur Full-stack</h3>
+                        <p className="text-gray-600 mt-2">Solutions complètes du frontend au backend, avec une architecture bien pensée.</p>
                     </div>
 
-                    {/* Spring Boot */}
+                    {/* Développeur Frontend */}
                     <div className="p-6 bg-white shadow-lg rounded-lg flex flex-col items-center">
-                        <FaPhp className="text-purple-600 text-5xl mb-4" />
-                        <h3 className="text-xl font-semibold">Développement CodeIgniter</h3>
-                        <p className="text-gray-600 mt-2">Création d'applications web légères et performantes avec CodeIgniter.</p>
+                        <FaLaptopCode className="text-pink-500 text-5xl mb-4" />
+                        <h3 className="text-xl font-semibold">Développeur Frontend</h3>
+                        <p className="text-gray-600 mt-2">Interfaces modernes et réactives avec une excellente expérience utilisateur.</p>
                     </div>
                 </motion.div>
             </div>

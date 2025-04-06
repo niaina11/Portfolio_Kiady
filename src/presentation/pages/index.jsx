@@ -14,7 +14,7 @@ import FloatingContactButton from './navbar/floatingContactButton';
 
 export default function () {
     return (
-        <>
+        <div className='overflow-x-hidden'>
             <Navbar />
             <FloatingContactButton />
             <section id="home"><Home /></section>
@@ -25,7 +25,7 @@ export default function () {
             <section id="experience"><Experience /></section>
             <section id='contact'><Contact/></section>
             <section id="contact"><Foot /></section>
-        </>
+        </div>
 
     )
 }

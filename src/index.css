@@ -17,3 +17,6 @@
 .box-shadow{
   box-shadow: -10px -10px 10px -6px rgba(197, 196, 196, 0.212);
 }
+body {
+  overflow-x: hidden;
+}

@@ -80,7 +80,7 @@ export default function Navbar() {
               to={to}
               smooth={true}
               duration={500}
-              className="block px-4 py-2 text-blue-900 hover:bg-blue-100 cursor-pointer"
+              className="block px-1 py-2 text-blue-900 hover:bg-blue-100 cursor-pointer"
             >
               {to.charAt(0).toUpperCase() + to.slice(1)}
             </Link>

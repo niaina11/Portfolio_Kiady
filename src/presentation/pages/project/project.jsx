@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
 import {motion} from "framer-motion";
 import image from '../../../assets/front.jpg'
-import image2 from '../../../assets/images2jpeg.jpeg'
+import image2 from '../../../assets/achat.jpg'
 import image3 from '../../../assets/images3.jpeg'
 
 const projects = [
     {
-      title: "Gestion d'État Civil",
-      description: "Application permettant de gérer les documents d'état civil.",
+      title: "Gestion de questionnaire",
+      description: "Application permettant de partager et créer des questionnaires.",
       image: image,
+      technologies: ["Django", "React", "MySQL"],
+      link: "#"
+    },
+    {
+      title: "Gestion des achats en entreprise",
+      description: "Application de gestion des achats pour les entreprises.",
+      image: image2,
       technologies: ["Django", "React", "PostgreSQL"],
       link: "#"
     },
     {
-      title: "E-commerce & Livraison",
-      description: "Plateforme de vente en ligne avec système de livraison intégré.",
-      image: image2,
-      technologies: ["Laravel", "Vue.js", "MySQL"],
-      link: "#"
-    },
-    {
-      title: "Prise de Rendez-vous Médical",
-      description: "Application permettant de prendre des rendez-vous avec des médecins.",
+      title: "Gestion d'impôt",
+      description: " application web pour la gestion d'impôt foncier sur les propriété bâties",
       image: image3,
-      technologies: ["Spring Boot", "Angular", "MongoDB"],
+      technologies: ["Django", "Angular", "MySQL"],
       link: "#"
     }
   ];
@@ -52,12 +52,12 @@ const projects = [
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-blue-800">{project.title}</h3>
                   <p className="text-gray-600 mt-2">{project.description}</p>
-                  <div className="flex space-x-2 mt-4">
+                  <div className="flex justify-center flex-wrap gap-2 mt-4">
                     {project.technologies.map((tech, i) => (
                       <span key={i} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">{tech}</span>
                     ))}
                   </div>
-                  <a href={project.link} className="block mt-4 text-blue-600 font-semibold hover:underline">Voir le projet</a>
+                  {/* <a href={project.link} className="block mt-4 text-blue-600 font-semibold hover:underline">Voir le projet</a> */}
                 </div>
               </div>
             ))}

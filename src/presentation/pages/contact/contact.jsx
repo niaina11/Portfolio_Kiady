@@ -40,7 +40,7 @@ const handleSubmit = (e) => {
 
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col items-center px-6 py-10 bg-gradient-to-b from-white to-blue-50">
+    <section id="contact" className="min-h-screen flex flex-col items-center px-6 py-10 bg-gradient-to-r from-white via-blue-200 to-white">
       <motion.h2
         className="text-4xl font-bold text-blue-900 mb-6"
         initial={{ opacity: 0, y: -30 }}
